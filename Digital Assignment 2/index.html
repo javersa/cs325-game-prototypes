@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>World Warriors</title>
+    <script src="js/phaser.js"></script>
+    <script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>World Warriors</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+It is a 2D fighting game that is structured like an RPG game.
+</li>
+
+<li><strong>Technical Merit:</strong>
+The game uses plenty of sprite animations borrowed from the internet.
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+With more time, a developer can make a more polished game. It is also helpful to learn basic photoshop.
+While the actual coding process is simple to learn, organizing and photoshopping sprite sheets is very challenging.
+</li>
+
+<li><strong>Prototype Assets:</strong>
+While the button assets are made from scratch, every other asset was borrowed from the internet. Most of the borrowed assets were heavily photoshopped.
+<ul>
+<li>Streets of Rage 3 Stage: <a href="https://www.deviantart.com/pokeczarelf/art/Streets-Of-Rage-3-Sprite-Backgrounds-380050603">background</a></li>
+<li>Ryu Spritesheet: <a href="https://www.spriters-resource.com/snes/supersf2/sheet/5557/">Ryu</a></li>
+<li>Jojo Spritesheet (Playstation): <a href="https://www.spriters-resource.com/arcade/jojosbizarreadventure/sheet/81349/">Jotaro</a></li>
+<li>Jojo Spritesheet (SNES): <a href="https://www.spriters-resource.com/snes/jojoadventure/sheet/12458/">Star Platinum</a></li>
+<li>Scorpion Spritesheet: <a href="https://www.spriters-resource.com/snes/mortalkombat/sheet/40746/">Scorpion</a></li>
+<li>Goku Spritesheet: <a href="https://www.spriters-resource.com/game_boy_advance/dbzsuperwar/sheet/14491/">Goku</a></li>
+<li>Punch Sound Effect: <a href="https://www.freesoundeffects.com/free-track/punch-426855/">Punch</a></li>
+<li>Ora Sound Effect: <a href="https://www.myinstants.com/instant/jojo-oraoraoraoraora/">OraOraOra</a></li>
+<li>Get Over Here Sound Effect: <a href="https://www.myinstants.com/instant/get-over-here-scorpion/">Get Over Here</a></li>
+<li>Shoryuken Sound Effect: <a href="https://www.myinstants.com/instant/shoryuken/">Shoryuken</a></li>
+<li>Tatsumaki-Senpu-Kyaku Sound Effect: <a href="https://www.myinstants.com/instant/tatsumaki-senpu-kyaku/">Tatsumaki-Senpu-Kyaku</a></li>
+<li>Kamehameha Sound Effect: <a href="https://www.myinstants.com/instant/kamehameha/">Kamehameha</a></li>
+<li>Rivers in the Desert from Persona 5: <a href="https://downloads.khinsider.com/game-soundtracks/album/persona-5/3-22.%2520Rivers%2520in%2520the%2520Desert.mp3">Rivers in the Desert</a></li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong> 
+While the game's style is a throwback to classic arcade fighting games made by companies like Capcom, the game mechanics borrow from turn based RPG's like Pokemon. The code for the game is borrowed from different Phaser examples, including Audio Sprite, Play Music, Action On Click, Changing The Frames, and Colored Characters.
+</li>
+
+<li><strong>High Concept:</strong>
+Warriors from different worlds must fight to the death.
+</li>
+
+<li><strong>Theme:</strong>
+The has a strong feel of action and nostalgia as characters from different franchises fight each other.
+</li>
+
+<li><strong>Mandated Variety:</strong>
+State which input, randomness, genre, and play style you used in this prototype.
+
+The game is a point and click that used only the mouse. While the set pieces and actions are striaght forward, the randomness comes from the players' choices. The game is considered a 2D arcade fighting game. Players need to approach it like a turn based RPG similar to Pokemon.
+</li>
+
+<li><strong>Prototype Goal:</strong>
+The goal is to test Phaser and Javascript's limit on game development, as this game uses severel functions, variables, set pieces, sprites, animations, and if-else statement.
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+Players should experience excitement and nostalgia as they get to play with very familiar characters.
+</li>
+
+<li><strong>Gameplay:</strong>
+Two players will see a title screen with a start button. When one of the players presses the start button, a character select screen will open up with characters Ryu, Jotaro, Scorpion, and Goku (all of them play the same). Player 1 will pick one of the characters with the mouse. Once the player picks his/her character, he/she cannot pick a different character. Once the character is picked, the continue button must be clicked for player 2 to pick his/her character (he/she can only pick one as well). When the continue button is clicked again, the game will begin. Each player will fight each other to the death. Each player is also given life and super meters. Player 1 will start, and each player will rotate between turns.
+
+<ul>
+<li>Light Attack: Player deals 20 damage to the other player, but the other player will gain 20 points for his/her super meter.</li>
+<li>Heavy Attack: Player deals 40 damage to the other player, but the other player will gain 40 points for his/her super meter.</li>
+<li>Block Attack: Player will not receive damage not super meter points once this attack activates, but the other player who attacks will receive 20 super points for a light attack, or 40 super points for a heavy attack.</li>
+<li>Super Attack: When a player's super meter is over 100 points, the super attack will appear for him/her. The Super Attack can deal 80 damage and 80 super points to the other player, even if that player used block attack.</li>
+</ul>
+The player who's life meter is below 0 loses.
+</li>
+
+<li><strong>Strategies:</strong>
+The player will need use their attacks thoughtfully for it is a risk and award system. A player could only use heavy attacks at the risk of the other player gaining his super points faster. A player can use his block attack at the risk of the other player using his/her heavy attack to gain more points for his/her super meter. Strategy comes down solely on player's choice.
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
+How will the dramatic tension interact with the gameplay tension?
+
+In four different worlds based off of famous video games and manga, four warriors have different reasons for fighting. Ryu wishes to become the strongest Street Fighter in order to control the rage from within. Jotaro uses his Stand Star Platinum to serve justice to evil doers. Scorpion only wishes slaughter other warriors until he finds his revenge against Sub-Zero. Finally, Goku only wants to fight against strong warriors to break his own limits. These iconic warriors are sent to our world by a mysterious force to fulfill their goals. Players get to determine would would win as they get to play matches created from their dreams. Who will be the strongest fighter?
+</li>
+
+<li><strong>Target Audience:</strong>
+People who passionate for mid 90's arcade fighting games.
+</li>
+
+<li><strong>Play Time:</strong>
+The game will take roughly 2 minutes to play.
+</li>
+
+</ul>
+
+</div>
+</body>
+</html>
