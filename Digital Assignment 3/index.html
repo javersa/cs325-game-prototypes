@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Heaven's Surprise</title>
+	<script src="js/phaser.min.js"></script>
+	<!-- Boot.js must come first since it creates the BasicGame object
+	that stores all the states. -->
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/Game1.js"></script>
+	<script src="js/Game2.js"></script>
+	<!-- main.js must come last since it references the other ones. -->
+	<script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Heaven's Surprise</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+The game is a top-down 2D game based off of Game Maker indie titles like Yume Nikki.
+</li>
+
+<li><strong>Technical Merit:</strong>
+The game utilizes 2D sprite animations for horizontal and vertical movements.
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+Learning the next level in game development and making smaller games to make a bigger is a challenge. It was a challenge to load different assets for different portions of the game. Because of this barrier, I was unable to make the game larger with different schenarios. I want the game to be more of a dungeon crawler similar to Legend of Zelda: A Link to the Past and Diablo, where you go around different parts of the world to performing different tasks to collect keys to win.
+</li>
+
+<li><strong>Prototype Assets:</strong>
+Assets taken online were slightly photoshopped.
+<ul>
+<li>Loading Bar: self-made</li>
+<li>Angel Image: self-made</li>
+<li>Start Button: self-made</li>
+<li>Sky Background: <a href="https://opengameart.org/content/sky-background">Sky</a></li>
+<li>Item Select Sound: <a href="https://freesound.org/people/pumodi/sounds/150222/">Item Select</a></li>
+<li>Character asset: <a href="https://www.deviantart.com/angel-of-britannia/art/2p-Prussia-XP-Sprite-550737231">Character</a></li>
+<li>Castle Door asset: <a href="https://opengameart.org/content/castle-door">Castle Door</a></li>
+<li>Key Item asset: <a href="https://opengameart.org/content/scp-005-skeleton-key">Key Item</a></li>
+<li>Carl Image: <a href="https://forums.rpgmakerweb.com/index.php?threads/rpg-mv-resource-request-jumpscare-images.88878/">Carl</a></li>
+<li>Scream Sound Effect: <a href="https://www.soundboard.com/sb/sound/179024">Scream</a></li>
+<li>Music: "Gerudo Valley" Koji Kondo (<a href="https://downloads.khinsider.com/game-soundtracks/album/legend-of-zelda-melodies-of-time/09%2520-%2520Gerudo%2520Valley.mp3"></a>)</li>
+<li>Music: "Inside the Castle Walls" Koji Kondo (<a href="https://downloads.khinsider.com/game-soundtracks/album/super-mario-64-soundtrack/07%2520Inside%2520the%2520Castle%2520Walls.mp3"></a>)</li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+The game mechanics are similar to Yume Nikki: you are simply moving up, down, left, and right; pick up items; and enter doors. 
+<ul>
+<li>The code for this example is adapted from the <a href="https://phaser.io/examples/v2/sprites/move-a-sprite">Phaser Move A Sprite</a></li>
+</ul>
+</li>
+
+<li><strong>High Concept:</strong>
+A brave warrior arrives to heaven and must collect the key to enter the door.
+</li>
+
+<li><strong>Theme:</strong>
+The game required a man with wings to take advantage of the heaven influences.
+</li>
+
+<li><strong>Mandated Variety:</strong>
+The game requires mouse input, A,S,W,D. The game has no randomness (except a surprise at the end) in a top-down adventure game. The game requires certain inputs to trigger events. 
+</li>
+
+<li><strong>Prototype Goal:</strong>
+The game will take advantage of the states in Phaser.
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+The game is not meant to be played multiple times, for it is more visually entertaining than interactively entertaining.
+</li>
+
+<li><strong>Gameplay:</strong>
+The game loads to a Start Menu with an Angel flying around the screen. The player presses the start button to play the game with a left mouse click. The player will play a Warrior arriving to heaven. He is approached by an Angel, giving him the task to find the Key of Destiny if he wants to enter heaven. The Warrior moves up, down, left, and right with W, S, A, D. The Warrior collects the key and the Door appears. The Warrior enters the door, and a jumpscare image and audio plays with the intent of scaring the player. A start button also appears to return to the Start Menu.
+</li>
+
+<li><strong>Strategies:</strong>
+The game focuses on exploration than actual strategy.
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+A Brave Warrior, after dying in battle, arrives to the door way to Heaven and meets the Guardian Angel. The Heaven in this game is based off of how kids in Christian Studies think Heaven is like. The game is more abstract than actual backstory. Because it is an exploration game, the dramatic tension comes from what the player discovers in game.
+</li>
+
+<li><strong>Target Audience:</strong>
+The game is for people who don't have time to play games, but does have to time to watch them.
+</li>
+
+<li><strong>Play Time:</strong>
+The game can be played in 30 seconds.
+</li>
+
+</ul>
+</div>
+</body>
+</html>
