@@ -1,0 +1,128 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Ninja Guess</title>
+	<script src="js/phaser.min.js"></script>
+	<!-- Boot.js must come first since it creates the BasicGame object
+	that stores all the states. -->
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/NinjaGuess.js"></script>
+	<script src="js/GameOver.js"></script>
+	<!-- main.js must come last since it references the other ones. -->
+	<script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Ninja Guess by Joseph Aversa</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+Ninja Guess is 2D non-jumping platformer that focuses more on minor gambling than actual action. The game is singleplayer, it can also be used to for high score competition (getting the highest score in Donkey Kong).</li>
+
+<li><strong>Technical Merit:</strong>
+While the game itself is very simple, it does implement several interesting technological tricks to contextualize the game mechanics. The ninja character utilizes an old-fashion sprite-sheet animation as he moves left or right. The game also utilizes if/else statements to trigger events, such as picking up an object to display a message on screen.
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+Even as you learn new techniques in game development, there are still limits to what you can and can't do. The game was originally going to be a series of math questions to answer. The game was failing to do the if else statements correctly in the update function to change between different questions. I had to refer back to Ninja Guess's original concept as a random number generator.
+
+I still struggled to get the physics correct between the character and the platform. Resetting the game, however, became very simple to accomplish.
+</li>
+
+<li><strong>Prototype Assets:</strong>
+Most of the Assets used in this game were borrowed from diffeerent resources. The spritesheets were heavily photoshopped.
+<ul>
+<li>Loading Bar: self-made</li>
+<li>Start Button: self-made</li>
+<li>Title Image: self-made</li>
+<li>Zelda Sound Effect: <a href="https://www.sounds-resource.com/nes/legendofzelda/sound/4590/">Dududuuduuuu</a></li>
+<li>Item Select Sound Effect: <a href="https://freesound.org/people/pumodi/sounds/150222/">Item Select</a></li>
+<li>Sword Sound Effect: <a href="http://en.soundeffect-lab.info/sound/battle/">Sword</a></li>
+<li>"Gerudo Valley": <a href="https://downloads.khinsider.com/game-soundtracks/album/legend-of-zelda-melodies-of-time/09%2520-%2520Gerudo%2520Valley.mp3">Koji Kondo</a></li>
+<li>Punch Sound Effect: <a href="https://www.freesoundeffects.com/free-track/punch-426855/">Punch</a></li>
+<li>Ground Image: <a href="http://phaser.io/tutorials/making-your-first-phaser-2-game">Ground</a></li>
+<li>Numbers 0 and 1 images: <a href="https://opengameart.org/content/numbers-blocks-set-01">0 and 1</a></li>
+<li>Running Ninja Spritesheet: <a href="https://opengameart.org/content/2d-chibi-ninja-8-actions">Ninja Run</a></li>
+<li>Ninja Attack Spritesheet: <a href="https://opengameart.org/content/2d-chibi-ninja-8-actions">Ninja Attack</a></li>
+<li>Sky Background image: <a href="https://opengameart.org/content/sky-background">Sky</a></li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+The game is an improvement from Ninja Guess in Digital Assignment 1. Ninja Guess now has several states, consisting of Boot, Preloader, MainMenu, NinjaGuess, and GameOver. With the addition of states, the player will no longer need to press the refresh button on the top of the webpage to restart the game. In the last game, the player had to guess one number to win. In this game, the player will need to guess multiple times, until he or she answer incorrectly to earn a high score. Instead of running into the number boxes to guess a number, the player will now walk over the number box, and press attack to guess the number and play an attack animation. The game also implements sound effects at different events.
+<p>
+Like the original game, this game plays similarly to NES titles like "Ninja Gaiden" and "Castlevania," but with similarities to mid-90's edutainment games like "Mario Teaches Typing". The main objective of the game as an 80's mentality, where there is a focus for getting a high score, instead of completing a story.
+</p>
+<p>
+Original Game: <a href="https://javersa.github.io/cs325-game-prototypes/Digital%20Assignment%201/">Ninja Guess</a>
+</p>
+Code borrowed from other sources include:
+<ul>
+<li>States with Parameters: <a href="http://www.html5gamedevs.com/topic/4702-states-with-parameters/">this.count</a></li>
+<li>Tweening the Ninja Animation: <a href="https://phaser.io/examples/v2/tweens/tween-reuse">tweenLoop</a></li>
+<li>The Attack Button: <a href="http://www.html5gamedevs.com/topic/1922-justpressed-only-once/">justPressed</a></li>
+</ul>
+</li>
+
+<li><strong>High Concept:</strong>
+Guess a number between 0 and 1 as many times as you can.
+</li>
+
+<li><strong>Theme:</strong>
+The themes implemented in this game include a mix of 90's point and click, and classic NES.
+</li>
+
+<li><strong>Mandated Variety:</strong>
+This 2D platformer is casually played using only the A,D,F keys on specific rules.
+</li>
+
+<li><strong>Prototype Goal:</strong>
+To improve upon an old prototype with the better game development knowledge.
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+The player will have a short, pieceful, yet entertaining time as they compete with themselves (and others) in guessing the most amount of times.
+</li>
+
+<li><strong>Gameplay:</strong>
+The player begins with a Menu Screen with a control set up. He or she must use the cursor for the start button to start the game. The game begins with a ninja character and a '1' and '0' box inbetween him. The objective of the game will be at the top of the screen, and a number count at the center. The player must press 'A' to move left, 'D' to move right, and 'F' to attack/select. The player must attack one of the number boxes to answer the guess. If the player answers correctly, the number count will increase by one and a new randow number between 0 and 1 is generated. The player will do this until he/she answers incorrectly. If the player answers incorrectly, a Game Over Screen will appear with an amusing animation, the high score, and a start button to return back to the Main Menu.
+
+</li>
+
+<li><strong>Strategies:</strong>
+Because it is a guessing game, there will be more gambling involved than actual strategy.
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+The young, nameless ninja must master his training to become a ninja master. To be an excellent ninja, he must be a quick thinker. He is given a task from the heavens for his training: answer different guesses multiple times without fail. He must continue this guessing game until he becomes a master.
+</li>
+
+<li><strong>Target Audience:</strong>
+People under all ages can enjoy this game, specifically people who enjoy earning the highest record in any game.
+</li>
+
+<li><strong>Play Time:</strong>
+Each game will most likely take 5 seconds to play. But the pure enjoyment of the game will have the player play multiple times, creating longer play time.
+</li>
+
+</ul>
+</div>
+</body>
+</html>
