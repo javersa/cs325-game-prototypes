@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Digital Assignment 6</title>
+	<script src="js/phaser.min.js"></script>
+	<!-- Boot.js must come first since it creates the BasicGame object
+	that stores all the states. -->
+	<script src="js/Boot.js"></script>
+	<script src="js/Preloader.js"></script>
+	<script src="js/MainMenu.js"></script>
+	<script src="js/Character.js"></script>
+	<script src="js/Stage.js"></script>
+	<script src="js/Game1.js"></script>
+	<script src="js/Game2.js"></script>
+	<script src="js/Win.js"></script>
+	<!-- main.js must come last since it references the other ones. -->
+	<script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Style Palace</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+It is a turn based, Pokemon-like game where you fight another player with original and preset characters.
+</li>
+
+<li><strong>Technical Merit:</strong>
+This prototype takes advantage of timers, states as menus, and transferring data between states.
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+Game development takes a long time, and even if you are capable of doing interesting stuff with your programming. Moving data between states and keeping a consistency is very complicating.
+</li>
+
+<li><strong>Prototype Assets:</strong>
+A majority of the assets are either hand drawn or made in Gimp. The sound effects and music were the only assets taken online:
+
+<ul>
+<li>"Prologue" Tetsuya Shibata: <a href="https://www.emuparadise.me/soundtracks/Devil%20May%20Cry%203%20OST/">Menu Music</a></li>
+<li>"Bloody Tears" Akira Joji, Keizo Nakamura, Tomoko Sano, Mikio Saitou, Motoaki Furukawa: <a href="https://downloads.khinsider.com/game-soundtracks/album/castlevania-rondo-of-blood-pc-engine-cd/10_Bloody%2520Tears.mp3">Stage 1 Music</a></li>
+<li>"Rivers in the Desert": <a href="https://downloads.khinsider.com/game-soundtracks/album/persona-5/3-22.%2520Rivers%2520in%2520the%2520Desert.mp3">Stage 2 Music</a></li>
+<li>"Gerudo Valley" Koji Kondo: <a href="https://downloads.khinsider.com/game-soundtracks/album/legend-of-zelda-melodies-of-time/09%2520-%2520Gerudo%2520Valley.mp3">Stage 3 Music</a></li>
+<li>"Guile Stage": <a href="https://downloads.khinsider.com/game-soundtracks/album/street-fighter-2-turbo/33.%2520Guile%2520Stage.mp3">Stage 4 Music</a></li>
+<li>"Victory Fanfare": <a href="http://www.gamethemesongs.com/Final_Fantasy_VI_-_Victory_Fanfare.html">Victory Music</a></li>
+<li>Item Select Sound Effect: <a href="https://freesound.org/people/pumodi/sounds/150222/">Button Sound Effect</a></li>
+<li>"Mega Man 2 SFX(18)": <a href="https://www.sounds-resource.com/nes/megaman2/sound/3616/">Damage Sound Effect</a></li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+As a turn-based, Pokemon-like game, it borrows elements from fighting games: unique characters with their own movesets and stats, health and super meters, and character and stage selection.
+<ul>
+<li>This Phaser example was used to decrease health: <a href="https://phaser.io/examples/v2/time/remove-event">Remove Event</a></li>
+<li>This Phaser example was used for Fullscreen Option: <a href="https://phaser.io/examples/v2/display/fullscreen-buttons">Fullscreen Buttons</a></li>
+<li>This Phaser example was used for character movement: <a href="https://phaser.io/examples/v2/tweens/pause-tween">Pause Tween</a></li>
+</ul>
+</li>
+
+<li><strong>High Concept:</strong>
+Fight powerful warriors to become the Coolest Fighter in the world.
+</li>
+
+<li><strong>Theme:</strong>
+The themes include classic Capcom Fighting Games, Devil May Cry, NES RPG's, and Pokemon.
+</li>
+
+<li><strong>Mandated Variety:</strong>
+It is a fighting game that solely use point and click mechanics, and the randomness comes from the output of different fights.
+</li>
+
+<li><strong>Prototype Goal:</strong>
+This prototype tests data transferring between states and timers for events.
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+The enjoyment will come from the different characters schenarios, as players get to compete against each other in many different ways.
+</li>
+
+<li><strong>Gameplay:</strong>
+<br>The game loads into the Main Menu where you can only use point and click mouse control. There is the Player vs. Player Button (the main game), and the Fullscreen Button to play the game on full screen (recommended).
+<br><br>
+
+By pressing the Player vs. Player, you enter the character selection screen. You are given player 1 and player 2 cursors, and character slots. The players place their cursors over the slots to select characters. By selecting a character, that character's image, name, and stats appear. Once the characters are selected, the Stage Button appears to get to the stage selection screen. <br><br>
+
+The stage selection works the same as the character selection screen, but with only one cursor for different slots. Once the stage is selected, the Begin Button appears to start the game.<br><br>
+
+In Style Palace, each player must take turns in decreasing the other player's health. The player who still has health wins. Each player is given preset attacks that are different between each character. <br><br>
+
+Melee: The base attack for every character.<br>
+Range: Significantly does more damage than Melee, but can only be activated for a limited amount of times (Reload Meter is the number of times a player can use the Range attack). <br><br>
+
+When a player uses his/her Melee or Range attacks, he/she gains super points in their super meter. When the super meter builds up to 1800, the Super and Restore attacks appear. <br><br>
+
+Super: The character performs their unique ability to produce a significantly larger attack. <br>
+<ul>
+	<li>Convoy: Stuns the enemy to perform second attack.</li>
+	<li>Absolute: Steals a large amount of health from the other player for his/her health meter.</li>
+	<li>Longshot: Doubles the damage power in Melee and Range for 3 turns.</li>
+	<li>Killjoy: After performing her super, the other player's health is decreased by a large amount at the begining of her next turn.</li>
+</ul><br>
+Restore: Resets the Reload Meter to perform more Range attacks. <br><br>
+
+If the Super or Restore attack is activated, the super meter is reduced to 0. <br><br>
+
+Once a player wins, the game shifts into the Win screen. At the Win screen, you are given a the following options: <br>
+<ul>
+	<li>Replay button to play the game again with the same characters, stage, deactivated supers, and reset meters.</li>
+	<li>Character Select button to change the characters and stage to play the game again.</li>
+	<li>Stage Select button to change the stage, but keep the same characters with reset meters and supers.</li>
+	<li>Return to Main Menu is self described.</li>
+</ul>
+</li>
+
+<li><strong>Strategies:</strong>
+Instead of spamming the stronger attacks, the player needs to rely on using a combination of different attacks to their advantage.
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+<br>In our world, power is everything, and the strongest individual rules over everything. For Convoy, however, what matters in this world is being cool. That is why he will travel all around the world to defeat his enemy Absolute and his royal guard: Killjoy and Longshot. From their defeat, Convoy will build his place of coolness: Style Palace.
+</li>
+
+<li><strong>Target Audience:</strong>
+People who are passionate for fighting games and RPG mechanics will have an exciting time.
+</li>
+
+<li><strong>Play Time:</strong>
+One round will take 5 minutes, but for two players to explore all of the different characters requires at least 20 minutes of gameplay.
+</li>
+
+</ul>
+</div>
+</body>
+</html>
